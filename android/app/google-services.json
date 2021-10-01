@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "516572081680",
+    "project_id": "pristine-sphere-326109",
+    "storage_bucket": "pristine-sphere-326109.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516572081680:android:807f95cda342f270c36495",
+        "android_client_info": {
+          "package_name": "com.example.fiksii"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516572081680-4gecvohkaljgehjl022iroul4ahh5ab3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFC0Sdwy6XHbaw-FWRVyLcp-wpOdBjY94"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "516572081680-4gecvohkaljgehjl022iroul4ahh5ab3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
