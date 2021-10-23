@@ -45,8 +45,76 @@ class RouteCalculations {
     return urutan;
   }
 
+  Future<List<int>> _calculateFastestRouteWithPermutation() async {
+    final List<List<int>>? matrix = await DistanceMatrixRepository(_locations).getDistanceMatrix();
+    List<int> size = [];
+    List<int> durations = [];
+    for (var i = 1; i<matrix!.length; i++) {
+      size.add(i);
+    }
+    var permutation = findAllPermutations(size);
+    for (var route in permutation) {
+      var lastPointer = 0;
+      var duration = 0;
+      for (var pointer in route) {
+        duration += matrix[lastPointer][pointer - 1];
+        lastPointer = pointer;
+      }
+      durations.add(duration);
+    }
+    int pointer = 0;
+    int? fastestRoute;
+    int? iPointer;
+    for (var dur in durations) {
+      if (fastestRoute == null) {
+        fastestRoute = dur;
+        iPointer = pointer;
+        pointer++;
+        continue;
+      } else {
+        if (fastestRoute > dur) {
+          fastestRoute = dur;
+          iPointer = pointer;
+        }
+        pointer++;
+      }
+    }
+    // print('duration: $fastestRoute');
+    // print('pointer: $iPointer');
+    // print('route: ${permutation[iPointer!]}');
+    return permutation[iPointer!];
+  }
+
+  List<List<int>> findAllPermutations(List<int> source) {
+    List<List<int>> allPermutations = [];
+
+    void permutate(List<int> list, int cursor) {
+      // when the cursor gets this far, we've found one permutation, so save it
+      if (cursor == list.length) {
+        allPermutations.add(list);
+        return;
+      }
+
+      for (int i = cursor; i < list.length; i++) {
+        List<int> permutation = new List.from(list);
+        permutation[cursor] = list[i];
+        permutation[i] = list[cursor];
+        permutate(permutation, cursor + 1);
+      }
+    }
+
+    permutate(source, 0);
+
+    List<List<int>> strPermutations = [];
+    for (List<int> permutation in allPermutations) {
+      strPermutations.add(permutation);
+    }
+
+    return strPermutations;
+  }
+
   Future<List<String>> getDirections() async {
-    var arah = await _calculateRuteTercepat();
+    var arah = await _calculateFastestRouteWithPermutation();
     int prevIndex = 0;
     List<String> _directions = [];
 

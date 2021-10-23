@@ -58,7 +58,7 @@ class DistanceMatrixRepository {
       List<int> _distanceMatrix = [];
       List<dynamic> distances = row['elements'];
       for (var column in distances) {
-        _distanceMatrix.add(column['distance']['value']);
+        _distanceMatrix.add(column['duration']['value']);
       }
       _distanceMatrixes.add(_distanceMatrix);
     });

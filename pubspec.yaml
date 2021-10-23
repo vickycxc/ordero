@@ -45,7 +45,7 @@ dependencies:
   google_map_location_picker:
     git:
       url: git://github.com/lyokone/google_map_location_picker.git
-  cached_network_image: ^3.1.0
+#  cached_network_image: ^3.1.0
   firebase_storage: ^10.0.3
   image_picker: ^0.8.4+2
   intl: ^0.17.0
