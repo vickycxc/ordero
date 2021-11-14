@@ -79,6 +79,22 @@ class Pembeli {
   }
 }
 
+class ItemBarang {
+  const ItemBarang({
+    required this.nama,
+    required this.jumlah,
+    required this.varian,
+    required this.hargaSatuan,
+    required this.totalHarga
+  });
+
+  final String nama;
+  final int jumlah;
+  final String? varian;
+  final int hargaSatuan;
+  final int totalHarga;
+}
+
 class Keuangan {
   // Map<String, int> pendapatanPerBulan;
   // Map<String, int> penjualanPerBulan;

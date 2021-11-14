@@ -95,6 +95,7 @@ class _BodyState extends State<Body> with WidgetsBindingObserver {
       _kontakController.text = orderDetails['No. Telp'] ?? '';
       _jumlahController.text = orderDetails['Jumlah'] ?? '';
       _barangController.text = orderDetails['Barang'] ?? '';
+      //TODO rombak jumlah dan barang controller
     }
   }
 
