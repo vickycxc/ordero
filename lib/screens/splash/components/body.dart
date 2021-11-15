@@ -1,3 +1,4 @@
+import 'package:fiksii/screens/sign_in/sign_in_screen.dart';
 import 'package:fiksii/screens/splash/components/splash_content.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -38,8 +39,7 @@ class _BodyState extends State<Body> {
           SplashContent(splashData: splashData[0]),
           SplashContent(splashData: splashData[1]),
           SplashContent(splashData: splashData[2]),
-
-
+          SignInScreen()
         ]
     );
   }
