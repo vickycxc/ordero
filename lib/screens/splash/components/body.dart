@@ -28,6 +28,25 @@ class _BodyState extends State<Body> {
     }
   ];
 
+  List<Map<String, String>> splashData1 = [
+    {
+      "title": "Manage,\norganize,\ndeliver your product\nEASILY",
+      "subtitle": "Ordero is the one-app solution for your social commerce needs.",
+      "image": "assets/images/splash_1.png",
+    },
+    {
+      "title": "Feel the\nease of\nmanaging orders",
+      "subtitle":
+      "Imagine running your business this easy.",
+      "image": "assets/images/splash_2.png",
+    },
+    {
+      "text": "Deliver all your products faster",
+      "subtitle": "Find the fastest route, save your day.",
+      "image": "assets/images/splash_3.png",
+    }
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(

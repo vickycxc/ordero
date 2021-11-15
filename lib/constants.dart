@@ -9,13 +9,22 @@ import 'package:flutter/material.dart';
 // const kSecondaryColor = Color(0xFF979797);
 // const kTextColor = Color(0xFF757575);
 
-// const kPrimaryColor = Color(0xFFFF9100);
-const kPrimaryColor = Color.fromARGB(255, 173, 152, 220);
-// const kPrimaryGradient = Colir.
-// const kPrimaryColor = Colors.amber;
+// // const kPrimaryColor = Color(0xFFFF9100);
+// const kPrimaryColor = Color.fromARGB(255, 173, 152, 220);
+// // const kPrimaryGradient = Colir.
+// // const kPrimaryColor = Colors.amber;
 const kPrimaryLightColor = Color(0xFFFFC246);
 const kPrimaryDarkColor = Color(0xFFC56200);
 const kPrimaryTextColor = Color(0xFF757575);
+
+//from instagram
+const kColorOne = Color(0xFF125488);
+const kColorTwo = Color(0xFF2A93D5);
+const kColorThree = Color(0xFF37CAEC);
+const kColorFour = Color(0xFF3DD9D6);
+const kColorFive = Color(0xFFADD9D8);
+
+const kPrimaryColor = kColorTwo;
 
 const kAnimationDuration = Duration(milliseconds: 200);
 
