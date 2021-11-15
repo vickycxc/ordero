@@ -1,113 +1,46 @@
-import 'package:fiksii/constants.dart';
-import 'package:fiksii/screens/sign_in/sign_in_screen.dart';
-import 'package:fiksii/size_config.dart';
+import 'package:fiksii/screens/splash/components/splash_content.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../components/splash_content.dart';
-import '../../../components/default_button.dart';
 class Body extends StatefulWidget {
+  const Body({Key? key}) : super(key: key);
+
   @override
   _BodyState createState() => _BodyState();
 }
 
 class _BodyState extends State<Body> {
   int currentPage = 0;
+
   List<Map<String, String>> splashData = [
     {
-      "text": "Welcome to Ordero, \norganize your business in one app!",
-      "image": "assets/images/splash_1.png",
-    },
-    {
-      "text":
-          "We help people's business with easy management \naround Indonesia",
-      "image": "assets/images/splash_2.png",
-    },
-    {
-      "text": "We show the easy way to manage. \nNo need to worry with us",
-      "image": "assets/images/splash_3.png",
-    }
-  ];
-
-  List<Map<String, String>> splashData1 = [
-    {
-      "title": "Manage,\norganize,\ndeliver your product\nEASILY",
+      "title": "Manage,\norganize,\ndeliver your\nproducts, easily",
       "subtitle": "Ordero is the one-app solution for your social commerce needs.",
-      "image": "assets/images/splash_1.png",
+      "image": "assets/splash/splash-one.jpg",
     },
     {
-      "title": "Feel the\nease of\nmanaging orders",
+      "title": "Feel the\nease of\nmanaging\nmany orders",
       "subtitle":
       "Imagine running your business this easy.",
-      "image": "assets/images/splash_2.png",
+      "image": "assets/splash/splash-two.jpg",
     },
     {
-      "text": "Deliver all your products faster",
+      "title": "Deliver\nall your\nproducts,\nfaster than ever",
       "subtitle": "Find the fastest route, save your day.",
-      "image": "assets/images/splash_3.png",
+      "image": "assets/splash/splash-three.jpg",
     }
   ];
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: SizedBox(
-        width: double.infinity,
-        child: Column(
-          children: [
-            Expanded(
-              flex: 3,
-              child: PageView.builder(
-                onPageChanged: (value) {
-                  setState(() {
-                    currentPage = value;
-                  });
-                },
-                itemCount: splashData.length,
-                itemBuilder: (context, index) => SplashContent(
-                  image: splashData[index]["image"]!,
-                  text: splashData[index]["text"]!,
-                ),
-              ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-                child: Column(
-                  children: [
-                    Spacer(),
-                    Row(
-                      children: List.generate(
-                          splashData.length, (index) => buildDot(index)),
-                      mainAxisAlignment: MainAxisAlignment.center,
-                    ),
-                    Spacer(flex: 3,),
-                    DefaultButton(
-                      text: "Continue",
-                      press: () {
-                        Navigator.pushNamed(context, SignInScreen.routeName);
-                      },
-                    ),
-                    Spacer()
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+    return PageView(
+        children: [
+          SplashContent(splashData: splashData[0]),
+          SplashContent(splashData: splashData[1]),
+          SplashContent(splashData: splashData[2]),
 
-  AnimatedContainer buildDot(int index) {
-    return AnimatedContainer(
-      duration: kAnimationDuration,
-      margin: EdgeInsets.only(right: 5),
-      height: 6,
-      width: currentPage == index ? 20 : 6,
-      decoration: BoxDecoration(
-          color: currentPage == index ? kPrimaryColor : Color(0xFFD8D8D8),
-          borderRadius: BorderRadius.circular(3)),
+
+        ]
     );
   }
 }

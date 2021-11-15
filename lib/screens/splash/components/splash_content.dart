@@ -1,37 +1,60 @@
-import 'package:fiksii/constants.dart';
-import 'package:fiksii/size_config.dart';
 import 'package:flutter/material.dart';
 
+import '../../../size_config.dart';
 
 class SplashContent extends StatelessWidget {
   const SplashContent({
     Key? key,
-    required this.text,
-    required this.image,
+    required this.splashData,
   }) : super(key: key);
-  final String text, image;
+
+  final Map<String, String> splashData;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
       children: [
-        Spacer(),
-        Text(
-          "Ordero",
-          style: TextStyle(
-              color: kPrimaryColor,
-              fontWeight: FontWeight.bold,
-              fontSize: getProportionateScreenWidth(36)),
+        Image.asset(splashData['image']!,fit: BoxFit.cover,
+          height: SizeConfig.screenHeight,
+          width: SizeConfig.screenWidth,),
+        Column(
+          children: [
+            Expanded(child: Container()),
+            Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                      colors: [
+                        Colors.black,
+                        Colors.transparent
+                      ],
+                      stops: [0.2, 1]
+                  )
+              ),
+              width: SizeConfig.screenWidth,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: SizeConfig.screenWidth * 0.02, vertical: SizeConfig.screenHeight * 0.02),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Align(alignment: AlignmentDirectional.bottomStart,child: Text(splashData['title']!,style: TextStyle(fontSize: 40,color: Colors.white, fontWeight: FontWeight.w700,fontFamily: 'League Spartan'),)),
+                    // SizedBox(height: SizeConfig.screenHeight * 0.1)
+                    SizedBox(height: SizeConfig.screenHeight * 0.01,),
+                    Row(
+                      children: [
+                        Expanded(child: Text(splashData['subtitle']!, style: TextStyle(fontSize: 12,color: Colors.white, fontWeight: FontWeight.w300,fontFamily: 'Nexa'),),flex: 4,),
+                        Expanded(child: Container(),)
+                      ],
+                    ),
+                    SizedBox(height: SizeConfig.screenHeight * 0.05,),
+
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
-        Text(text, textAlign: TextAlign.center),
-        Spacer(
-          flex: 2,
-        ),
-        Image.asset(
-          image,
-          height: getProportionateScreenHeight(265),
-          width: getProportionateScreenWidth(235),
-        )
       ],
     );
   }
