@@ -1,5 +1,6 @@
 import 'package:fiksii/components/no_account_text.dart';
 import 'package:fiksii/components/social_card.dart';
+import 'package:fiksii/constants.dart';
 import 'package:fiksii/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,7 @@ class Body extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.08,),
-                SignForm(),
+                SignForm(outlineInputBorder: outlineInputBorder(),),
                 SizedBox(height: SizeConfig.screenHeight * 0.04,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

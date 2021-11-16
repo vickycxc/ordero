@@ -15,8 +15,8 @@ import 'package:flutter/material.dart';
 // // const kPrimaryColor = Colors.amber;
 const kPrimaryLightColor = Color(0xFFFFC246);
 const kPrimaryDarkColor = Color(0xFFC56200);
-const kPrimaryTextColor = Color(0xFF757575);
-
+// const kPrimaryTextColor = Color(0xFF757575);
+const kPrimaryTextColor = Colors.white70;
 //from instagram
 const kColorOne = Color(0xFF125488);
 const kColorTwo = Color(0xFF2A93D5);

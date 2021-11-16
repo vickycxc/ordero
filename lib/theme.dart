@@ -6,10 +6,10 @@ ThemeData theme() {
   return ThemeData(
     visualDensity: VisualDensity.adaptivePlatformDensity,
     scaffoldBackgroundColor: Colors.white,
-    fontFamily: "Muli",
+    fontFamily: "Poppins",
     appBarTheme: appBarTheme(),
     textTheme: textTheme(),
-    inputDecorationTheme: inputDecorationTheme()
+    // inputDecorationTheme: inputDecorationTheme()
   );
 }
 
@@ -44,6 +44,6 @@ AppBarTheme appBarTheme() {
     systemOverlayStyle: SystemUiOverlayStyle.light,
     iconTheme: IconThemeData(color: Colors.black),
     titleTextStyle:
-    TextStyle(color: Color(0xFF8B8B8B), fontSize: 18),
+    TextStyle(color: Colors.white70, fontSize: 18),
   );
 }

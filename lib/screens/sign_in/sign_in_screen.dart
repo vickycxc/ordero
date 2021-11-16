@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'components/body.dart';
+import 'components/new_body.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({Key? key}) : super(key: key);
@@ -8,12 +9,6 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Sign In"),
-        centerTitle: true,
-      ),
-      body: Body(),
-    );
+    return NewBody();
   }
 }
