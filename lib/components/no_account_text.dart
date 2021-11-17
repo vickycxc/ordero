@@ -1,3 +1,4 @@
+import 'package:fiksii/screens/sign-up/sign_up_card.dart';
 import 'package:fiksii/screens/sign-up/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class NoAccountText extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpScreen()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpCard()));
           },
           child: Text(
             "Sign Up",

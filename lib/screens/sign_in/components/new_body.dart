@@ -49,12 +49,10 @@ class NewBody extends StatelessWidget {
                       ])),
                 ),
               ),
-              Center(
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: SizeConfig.screenWidth * 0.05, vertical: SizeConfig.safeScreenHeight * 0.05),
-                    child: LoginCard(),
-                  ),
+              SingleChildScrollView(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: SizeConfig.screenWidth * 0.05, vertical: SizeConfig.safeScreenHeight * 0.05),
+                  child: LoginCard(),
                 ),
               )
             ],
