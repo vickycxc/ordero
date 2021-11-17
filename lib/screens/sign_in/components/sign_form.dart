@@ -14,10 +14,7 @@ import '../../../size_config.dart';
 class SignForm extends StatefulWidget {
   const SignForm({
     Key? key,
-    required this.outlineInputBorder,
   }) : super(key: key);
-
-  final OutlineInputBorder outlineInputBorder;
 
   @override
   State<SignForm> createState() => _SignFormState();
@@ -47,53 +44,20 @@ class _SignFormState extends State<SignForm> {
     return Form(
       key: _formKey,
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          GlassmorphicContainer(
-            height: getProportionateScreenWidth(SizeConfig.screenWidth * 0.4),
-            width: getProportionateScreenWidth(SizeConfig.screenWidth * 0.4),
-            // padding: EdgeInsets.all(8),
-            borderGradient: LinearGradient(colors: [
-              Colors.white.withOpacity(0.1),
-              Colors.white.withOpacity(0.05),
-            ]),
-            blur: 2,
-            border: 4,
-            borderRadius: 200,
-            linearGradient: LinearGradient(colors: [
-              Colors.white.withOpacity(0.1),
-              Colors.white.withOpacity(0.05),
-            ],
-            stops: [0.5, 0.9],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight),
-              child: Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Image.asset('assets/logo/ordero_logo_transparent.png'),
-              ),
-              ),
-          SizedBox(
-            height: getProportionateScreenHeight(20),
-          ),
-          Text('Sign In',style: TextStyle(
-              fontFamily: 'Poppins',
-              fontWeight: FontWeight.w800,
-              fontSize: getProportionateScreenWidth(28),
-              color: Colors.white.withOpacity(0.6)),),
-          SizedBox(
-            height: getProportionateScreenHeight(40),
-          ),
           _buildEmailFormField(),
           SizedBox(
             height: getProportionateScreenHeight(20),
           ),
           _buildPasswordFormField(),
           SizedBox(
-            height: getProportionateScreenHeight(10),
+            height: getProportionateScreenHeight(0),
           ),
           FormError(errors: errors),
           SizedBox(
-            height: getProportionateScreenHeight(10),
+            height: getProportionateScreenHeight(20),
           ),
           Consumer<FirebaseState>(
             builder: (context, value, child) {
@@ -139,34 +103,15 @@ class _SignFormState extends State<SignForm> {
         }
         return null;
       },
-      decoration: InputDecoration(
-        hintText: 'Email',
-        hintStyle: TextStyle(
-            color: Colors.white24,
-            fontFamily: 'Poppins',
-            fontWeight: FontWeight.bold),
-        prefixIcon: CustomSuffixIcon(
-          color: Colors.white38,
-          svgIcon: 'assets/icons/Mail.svg',
-        ),
-        filled: true,
-        fillColor: Colors.white.withOpacity(0.3),
-        // floatingLabelBehavior: FloatingLabelBehavior.always,
-        contentPadding: EdgeInsets.symmetric(
-          horizontal: 10,
-          vertical: 0,
-        ),
-
-        enabledBorder: widget.outlineInputBorder,
-        focusedBorder: widget.outlineInputBorder,
-        border: widget.outlineInputBorder,
-      ),
+      decoration: loginStyle('Email', 'assets/icons/Mail.svg')
     );
   }
 
   TextFormField _buildPasswordFormField() {
     return TextFormField(
       obscureText: true,
+
+      keyboardType: TextInputType.text,
       onSaved: (newValue) => password = newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
@@ -186,28 +131,36 @@ class _SignFormState extends State<SignForm> {
         }
         return null;
       },
-      decoration: InputDecoration(
-        hintText: 'Password',
-        hintStyle: TextStyle(
-            color: Colors.white24,
-            fontFamily: 'Poppins',
-            fontWeight: FontWeight.bold),
-        prefixIcon: CustomSuffixIcon(
-          color: Colors.white38,
-          svgIcon: 'assets/icons/Lock.svg',
-        ),
-        filled: true,
-        fillColor: Colors.white.withOpacity(0.3),
-        // floatingLabelBehavior: FloatingLabelBehavior.always,
-        contentPadding: EdgeInsets.symmetric(
-          horizontal: 10,
-          vertical: 0,
-        ),
-
-        enabledBorder: widget.outlineInputBorder,
-        focusedBorder: widget.outlineInputBorder,
-        border: widget.outlineInputBorder,
+      decoration: loginStyle('Password', 'assets/icons/Lock.svg')
+    );
+  }
+  InputDecoration loginStyle(String hint, String icon) {
+    OutlineInputBorder outlineInputBorder = OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+      borderSide: BorderSide(color: Colors.transparent),
+      gapPadding: 10,
+    );
+    return InputDecoration(
+      hintText: hint,
+      hintStyle: TextStyle(
+          color: Colors.white24,
+          fontFamily: 'Poppins',
+          fontWeight: FontWeight.bold),
+      prefixIcon: CustomSuffixIcon(
+        color: Colors.white38,
+        svgIcon: icon,
       ),
+      filled: true,
+      fillColor: Colors.white.withOpacity(0.3),
+      // floatingLabelBehavior: FloatingLabelBehavior.always,
+      contentPadding: EdgeInsets.symmetric(
+        horizontal: 10,
+        vertical: 0,
+      ),
+
+      enabledBorder: outlineInputBorder,
+      focusedBorder: outlineInputBorder,
+      border: outlineInputBorder,
     );
   }
 }
