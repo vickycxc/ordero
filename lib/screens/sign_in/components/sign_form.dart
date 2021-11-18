@@ -1,12 +1,9 @@
 import 'package:fiksii/components/custom_suffix_icon.dart';
-import 'package:fiksii/components/default_button.dart';
 import 'package:fiksii/components/firebase_state.dart';
 import 'package:fiksii/components/form_error.dart';
 import 'package:fiksii/constants.dart';
 import 'package:fiksii/screens/login_success/login_success_screen.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:glassmorphism/glassmorphism.dart';
 import 'package:provider/provider.dart';
 
 import '../../../size_config.dart';

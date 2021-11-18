@@ -1,4 +1,4 @@
-import 'package:fiksii/components/no_account_text.dart';
+import 'package:fiksii/screens/sign_in/components/no_account_text.dart';
 import 'package:fiksii/components/social_card.dart';
 import 'package:fiksii/constants.dart';
 import 'package:fiksii/size_config.dart';
@@ -51,7 +51,7 @@ class Body extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: getProportionateScreenHeight(20)),
-                NoAccountText()
+                // NoAccountText()
 
               ],
             ),

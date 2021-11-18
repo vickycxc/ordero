@@ -1,4 +1,5 @@
-import 'package:fiksii/components/no_account_text.dart';
+import 'package:fiksii/screens/sign-up/sign_up_card.dart';
+import 'package:fiksii/screens/sign_in/components/no_account_text.dart';
 import 'package:fiksii/constants.dart';
 import 'package:fiksii/screens/sign_in/components/sign_form.dart';
 import 'package:flutter/material.dart';
@@ -7,12 +8,23 @@ import 'package:glassmorphism/glassmorphism.dart';
 import '../../../size_config.dart';
 import 'login_card.dart';
 
-class NewBody extends StatelessWidget {
-  const NewBody({Key? key}) : super(key: key);
+class NewBody extends StatefulWidget {
+  NewBody({Key? key}) : super(key: key);
+
+  @override
+  State<NewBody> createState() => _NewBodyState();
+}
+
+class _NewBodyState extends State<NewBody> {
+  PageController pageController = PageController();
+
+  double currentPageVal = 0.0;
 
   @override
   Widget build(BuildContext context) {
-
+    pageController.addListener(() {
+      setState(() => currentPageVal = pageController.page!);
+    });
     return Container(
       color: kPrimaryColor,
       child: SafeArea(
@@ -49,11 +61,23 @@ class NewBody extends StatelessWidget {
                       ])),
                 ),
               ),
-              SingleChildScrollView(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: SizeConfig.screenWidth * 0.05, vertical: SizeConfig.safeScreenHeight * 0.05),
-                  child: LoginCard(),
+              PageView(
+                controller: pageController,
+                physics:NeverScrollableScrollPhysics(),
+                scrollDirection: Axis.vertical,
+              children: [
+                SingleChildScrollView(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: SizeConfig.screenWidth * 0.05, vertical: SizeConfig.safeScreenHeight * 0.05),
+                    child: LoginCard(controller: pageController,),
+                  ),
+                ),SingleChildScrollView(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: SizeConfig.screenWidth * 0.05, vertical: SizeConfig.safeScreenHeight * 0.05),
+                    child: SignUpCard(controller: pageController,),
+                  ),
                 ),
+              ],
               )
             ],
           ),

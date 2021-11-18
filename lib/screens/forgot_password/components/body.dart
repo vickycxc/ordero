@@ -1,7 +1,7 @@
 import 'package:fiksii/components/custom_suffix_icon.dart';
 import 'package:fiksii/components/default_button.dart';
 import 'package:fiksii/components/form_error.dart';
-import 'package:fiksii/components/no_account_text.dart';
+import 'package:fiksii/screens/sign_in/components/no_account_text.dart';
 import 'package:fiksii/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -121,7 +121,7 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
           SizedBox(
             height: SizeConfig.screenHeight * 0.1,
           ),
-          NoAccountText(),
+          // NoAccountText(),
         ],
       ),
     );

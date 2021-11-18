@@ -1,3 +1,4 @@
+import 'package:fiksii/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../../../size_config.dart';
@@ -29,7 +30,9 @@ class SplashContent extends StatelessWidget {
                           begin: Alignment.bottomCenter,
                           end: Alignment.topCenter,
                           colors: [
-                            Colors.black,
+                            // Colors.black,
+                            kColorOne.withOpacity(0.9),
+                            // kColorOne.withOpacity(0.9),
                             Colors.transparent
                           ],
                           stops: [0.2, 1]

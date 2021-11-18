@@ -1,4 +1,4 @@
-import 'package:fiksii/components/no_account_text.dart';
+import 'package:fiksii/screens/sign_in/components/no_account_text.dart';
 import 'package:fiksii/screens/sign_in/components/sign_form.dart';
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
@@ -6,9 +6,12 @@ import 'package:glassmorphism/glassmorphism.dart';
 import '../../../size_config.dart';
 
 class SignUpCard extends StatelessWidget {
-  const SignUpCard({
+  SignUpCard({
     Key? key,
+    required this.controller
   }) : super(key: key);
+
+  PageController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +72,7 @@ class SignUpCard extends StatelessWidget {
             SizedBox(
               height: getProportionateScreenHeight(20),
             ),
-            Text('Sign In',style: TextStyle(
+            Text('Sign Up',style: TextStyle(
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w800,
                 fontSize: getProportionateScreenWidth(28),
@@ -80,7 +83,7 @@ class SignUpCard extends StatelessWidget {
             SignForm(),
             Spacer(),
             Row(),
-            NoAccountText(),
+            NoAccountText(controller: controller,haveAccount: true,),
             Spacer(flex: 3,)
           ],
         ),

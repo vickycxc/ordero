@@ -1,4 +1,4 @@
-import 'package:fiksii/components/no_account_text.dart';
+import 'package:fiksii/screens/sign_in/components/no_account_text.dart';
 import 'package:fiksii/screens/sign_in/components/sign_form.dart';
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
@@ -6,9 +6,12 @@ import 'package:glassmorphism/glassmorphism.dart';
 import '../../../size_config.dart';
 
 class LoginCard extends StatelessWidget {
-  const LoginCard({
+  LoginCard({
     Key? key,
+    required this.controller
   }) : super(key: key);
+
+  PageController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +83,7 @@ class LoginCard extends StatelessWidget {
             SignForm(),
             Spacer(),
             Row(),
-            NoAccountText(),
+            NoAccountText(controller: controller, haveAccount: false,),
             Spacer(flex: 3,)
           ],
         ),
