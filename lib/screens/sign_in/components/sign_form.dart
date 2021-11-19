@@ -50,11 +50,11 @@ class _SignFormState extends State<SignForm> {
           ),
           _buildPasswordFormField(),
           SizedBox(
-            height: getProportionateScreenHeight(0),
+            height: getProportionateScreenHeight(10),
           ),
           FormError(errors: errors),
           SizedBox(
-            height: getProportionateScreenHeight(20),
+            height: getProportionateScreenHeight(10),
           ),
           Consumer<FirebaseState>(
             builder: (context, value, child) {
@@ -138,6 +138,7 @@ class _SignFormState extends State<SignForm> {
       gapPadding: 10,
     );
     return InputDecoration(
+      errorStyle: TextStyle(fontSize: 0.01),
       hintText: hint,
       hintStyle: TextStyle(
           color: Colors.white24,

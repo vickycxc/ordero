@@ -27,7 +27,7 @@ class FinanceChartScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.asset('assets/logo/ordero_logo_transparent.png', width: getProportionateScreenHeight(34),height: getProportionateScreenHeight(34),)
+              child: Image.asset('assets/logo/orderly_logo_transparent.png', width: getProportionateScreenHeight(34),height: getProportionateScreenHeight(34),)
             ),
           ],
         ),

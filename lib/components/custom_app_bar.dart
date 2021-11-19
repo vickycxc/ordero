@@ -29,7 +29,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
             //           color: Colors.grey
             //       ),
             // ),
-              child: Image.asset('assets/logo/ordero_logo_transparent.png', width: getProportionateScreenHeight(34),height: getProportionateScreenHeight(34),)
+              child: Image.asset('assets/logo/orderly_logo_transparent.png', width: getProportionateScreenHeight(34),height: getProportionateScreenHeight(34),)
           ),
           // Spacer(),
           Text(namaBisnis,

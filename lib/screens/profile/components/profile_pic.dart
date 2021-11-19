@@ -22,7 +22,7 @@ class ProfilePic extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           CircleAvatar(
-            backgroundImage: AssetImage('assets/logo/ordero_logo.png'),
+            backgroundImage: AssetImage('assets/logo/orderly_logo.png'),
           ),
          if (withCamera) Positioned(
             right: -10,

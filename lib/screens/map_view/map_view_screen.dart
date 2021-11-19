@@ -36,7 +36,7 @@ class MapViewScreen extends StatelessWidget {
               //   decoration:
               //   BoxDecoration(shape: BoxShape.circle, color: Colors.grey),
               // ),
-              child: Image.asset('assets/logo/ordero_logo_transparent.png', width: getProportionateScreenHeight(34),height: getProportionateScreenHeight(34),)
+              child: Image.asset('assets/logo/orderly_logo_transparent.png', width: getProportionateScreenHeight(34),height: getProportionateScreenHeight(34),)
             ),
           ],
         ),

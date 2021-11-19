@@ -12,7 +12,7 @@ class InitializeScreen extends StatelessWidget {
           Container(
               // color: kPrimaryColor
           ),
-          Center(child: Image.asset('assets/logo/ordero_logo.png'))
+          Center(child: Image.asset('assets/logo/orderly_logo.png'))
         ],
       ),
     );

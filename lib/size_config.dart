@@ -11,7 +11,7 @@ class SizeConfig {
   void init(BuildContext context) {
     _mediaQueryData = MediaQuery.of(context);
     screenWidth = _mediaQueryData!.size.width;
-    screenHeight = _mediaQueryData!.size.height;
+    screenHeight = _mediaQueryData!.size.height * 0.82051282051;
     double topPadding = _mediaQueryData!.padding.top;
     double bottomPadding = _mediaQueryData!.padding.bottom;
     safeScreenHeight = screenHeight - topPadding - bottomPadding;

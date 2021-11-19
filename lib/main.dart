@@ -30,7 +30,7 @@ class MyAwesomeApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Ordero',
+      title: 'Orderly',
       theme: theme(),
       home: Consumer<FirebaseState> (
         builder: (context, value, child) => Wrapper(

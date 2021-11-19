@@ -45,7 +45,7 @@ class LoginCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Spacer(),
+            Spacer(flex: 4,),
             GlassmorphicContainer(
               height: getProportionateScreenWidth(SizeConfig.screenWidth * 0.4),
               width: getProportionateScreenWidth(SizeConfig.screenWidth * 0.4),
@@ -66,25 +66,21 @@ class LoginCard extends StatelessWidget {
                   end: Alignment.bottomRight),
               child: Padding(
                 padding: const EdgeInsets.all(4.0),
-                child: Image.asset('assets/logo/ordero_logo_transparent.png'),
+                child: Image.asset('assets/logo/orderly_logo_transparent.png'),
               ),
             ),
-            SizedBox(
-              height: getProportionateScreenHeight(20),
-            ),
+            Spacer(flex: 1,),
             Text('Sign In',style: TextStyle(
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w800,
                 fontSize: getProportionateScreenWidth(28),
                 color: Colors.white.withOpacity(0.6)),),
-            SizedBox(
-              height: getProportionateScreenHeight(40),
-            ),
+            Spacer(flex: 2,),
             SignForm(),
             Spacer(),
             Row(),
             NoAccountText(controller: controller, haveAccount: false,),
-            Spacer(flex: 3,)
+            Spacer(flex: 5,)
           ],
         ),
       ),

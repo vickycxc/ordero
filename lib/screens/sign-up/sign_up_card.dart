@@ -1,3 +1,4 @@
+import 'package:fiksii/screens/sign-up/components/sign_up_form.dart';
 import 'package:fiksii/screens/sign_in/components/no_account_text.dart';
 import 'package:fiksii/screens/sign_in/components/sign_form.dart';
 import 'package:flutter/material.dart';
@@ -45,10 +46,10 @@ class SignUpCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Spacer(),
+            Spacer(flex: 4,),
             GlassmorphicContainer(
-              height: getProportionateScreenWidth(SizeConfig.screenWidth * 0.4),
-              width: getProportionateScreenWidth(SizeConfig.screenWidth * 0.4),
+              height: getProportionateScreenWidth(SizeConfig.screenHeight * 0.2),
+              width: getProportionateScreenWidth(SizeConfig.screenHeight * 0.2),
               // padding: EdgeInsets.all(8),
               borderGradient: LinearGradient(colors: [
                 Colors.white.withOpacity(0.1),
@@ -66,25 +67,21 @@ class SignUpCard extends StatelessWidget {
                   end: Alignment.bottomRight),
               child: Padding(
                 padding: const EdgeInsets.all(4.0),
-                child: Image.asset('assets/logo/ordero_logo_transparent.png'),
+                child: Image.asset('assets/logo/orderly_logo_transparent.png'),
               ),
             ),
-            SizedBox(
-              height: getProportionateScreenHeight(20),
-            ),
+            Spacer(flex: 1,),
             Text('Sign Up',style: TextStyle(
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w800,
                 fontSize: getProportionateScreenWidth(28),
                 color: Colors.white.withOpacity(0.6)),),
-            SizedBox(
-              height: getProportionateScreenHeight(40),
-            ),
-            SignForm(),
-            Spacer(),
+            Spacer(flex: 2,),
+            SignUpForm(),
+            SizedBox(height: getProportionateScreenHeight(20),),
             Row(),
             NoAccountText(controller: controller,haveAccount: true,),
-            Spacer(flex: 3,)
+            Spacer(flex: 5,)
           ],
         ),
       ),
